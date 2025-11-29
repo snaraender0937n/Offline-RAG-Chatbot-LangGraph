@@ -1,0 +1,21 @@
+# Ingest your own docs and links
+
+Examples:
+
+- Fresh build from a local folder and URLs:
+  source venv/bin/activate && python ingestion.py --paths docs handbook/*.pdf --urls https://example.com/a https://example.com/b --rebuild
+
+- Add a couple of URLs to the existing index:
+  source venv/bin/activate && python ingestion.py --urls https://example.com/faq https://example.com/docs
+
+Notes:
+- Supported local types: `.pdf`, `.md`, `.txt`
+- Configure collection/dir via env:
+  RAGBOT_COLLECTION=ragbot-chroma
+  RAGBOT_CHROMA_DIR=./.chroma
+- The app imports `retriever` from `ingestion.py` at runtime, so once indexed you can just run:
+  python demo.py "your question"
+- **Important:** `ingestion.py` uses OpenAI embeddings. You need a valid
+  `OPENAI_API_KEY` in `.env` to actually build or update the index.  
+  Without an API key, the rest of the app can still run in *offline mode*
+  (dummy answers), but ingestion will not work.

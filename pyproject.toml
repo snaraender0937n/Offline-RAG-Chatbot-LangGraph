@@ -1,0 +1,16 @@
+[project]
+name = "offline-rag-chatbot"
+version = "0.1.0"
+description = "Offline-first RAG chatbot with dummy responses (no API keys required)."
+authors = [
+    { name = "Naraender S", email = "example@example.com" }
+]
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []
+
+packages = [{ include = "graph" }]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"

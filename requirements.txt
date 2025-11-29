@@ -1,0 +1,10 @@
+langchain
+langchain-community
+langchain-chroma
+langchain-text-splitters
+langgraph
+python-dotenv
+pydantic
+tiktoken
+beautifulsoup4
+pypdf
